@@ -8,12 +8,19 @@ import 'data/datasources/remote_photo_datasource.dart';
 import 'data/repositories/album_repository_impl.dart';
 import 'domain/usecases/get_albums_with_photos.dart';
 import 'application/bloc/album_bloc.dart';
+import 'core/services/hive_service.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
+  // Initialize Hive
+  await HiveService.init();
+
   final client = http.Client();
   final albumDs = RemoteAlbumDataSourceImpl(client: client);
   final photoDs = RemotePhotoDataSourceImpl(client: client);
   final repo = AlbumRepositoryImpl(albumDs: albumDs, photoDs: photoDs);
+  
   final usecase = GetAlbumsWithPhotos(repo);
 
   runApp(
@@ -35,6 +42,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSwatch(
           primarySwatch: Colors.teal,
         ).copyWith(secondary: Colors.orangeAccent),
+        fontFamily: '.SF Pro Display',
+        useMaterial3: true,
       ),
       routerConfig: router,
     );
