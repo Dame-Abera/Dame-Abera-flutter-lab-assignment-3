@@ -1,16 +1,41 @@
-# album_list
+# Flutter Album List App
 
-A new Flutter project.
+This is a Flutter application that fetches a list of albums and photos from the [JSONPlaceholder API](https://jsonplaceholder.typicode.com/).  
+It displays albums in a scrollable list. Tapping an album navigates to a detail screen showing all the album’s photos.
+
+## Features
+
+- Fetches albums and photos from a remote API
+- Displays a scrollable list of album titles and thumbnails
+- Shows full album details and photos on a detail screen
+- Uses Bloc for state management
+- Uses GoRouter for navigation
+- Handles loading and error states
+- Caches data locally for offline access
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Clone the repository:
+    ```
+    git clone https://github.com/Dame-Abera/flutter-lab-assignment-3
+    ```
+2. Install dependencies:
+    ```
+    flutter pub get
+    ```
+3. Run the app:
+    ```
+    flutter run
+    ```
 
-A few resources to get you started if this is your first Flutter project:
+## Tech Stack
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter
+- Bloc
+- GoRouter
+- http
+- Hive (for caching)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+**Assignment for: flutter-lab-assignment-3**
